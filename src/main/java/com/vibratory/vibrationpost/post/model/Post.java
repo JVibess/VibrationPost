@@ -1,2 +1,4 @@
-package com.vibratory.vibrationpost.post.model;public class Post {
+package com.vibratory.vibrationpost.post.model;
+
+public class Post {
 }
