@@ -26,14 +26,15 @@ public class ArtistController {
         return new ResponseEntity<>(createdArtist, HttpStatus.CREATED);
 
     }
-    @GetMapping()
-    public ResponseEntity getById(@RequestParam Long id) throws ArtistException {
+    @GetMapping("/{id}")
+    public ResponseEntity getById(@PathVariable Long id) throws ArtistException {
         Artist artist = artistService.getById(id);
         return new ResponseEntity<>(artist,HttpStatus.OK);
     }
-    @PutMapping("/update/{id}")
-    public ResponseEntity<Artist> updateById(@PathVariable("id")Long id, @RequestBody Artist artist) throws ArtistException {
+    @PutMapping("/{id}")
+    public ResponseEntity<Artist> updateById(@PathVariable Long id, @RequestBody Artist artist) throws ArtistException {
         artist = artistService.updateArtist(id,artist);
         return new ResponseEntity<>(artist,HttpStatus.ACCEPTED);
     }
+
 }

@@ -52,14 +52,14 @@ public class ArtistServiceImplTest {
         artist.setPassword(password);
 
         mockResponseArtist1 = new Artist();
-        mockResponseArtist1.setId(id);
+        mockResponseArtist1.setArtistId(id);
         mockResponseArtist1.setUserName(userName);
         mockResponseArtist1.setBio(bio);
         mockResponseArtist1.setImage(image);
         mockResponseArtist1.setPassword(password);
 
         mockResponseArtist2 = new Artist();
-        mockResponseArtist2.setId(2L);
+        mockResponseArtist2.setArtistId(2L);
         mockResponseArtist2.setUserName(userName);
         mockResponseArtist2.setBio(bio);
         mockResponseArtist2.setImage(image);
@@ -74,7 +74,7 @@ public class ArtistServiceImplTest {
         Artist returnArtist = artistService.create(artist);
 
         Assertions.assertNotNull(returnArtist,"artist should not be null");
-        Assertions.assertEquals(returnArtist.getId(),1L);
+        Assertions.assertEquals(returnArtist.getArtistId(),1L);
     }
 
     @Test
