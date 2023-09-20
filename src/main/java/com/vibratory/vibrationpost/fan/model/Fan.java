@@ -22,9 +22,11 @@ public class Fan extends Account {
     private Long fanId;
 
     @NonNull
+    @ManyToMany
     private List<Fan> followingUser;
 
     @NonNull
+    @ManyToMany
     private List<Artist> followingArtist;
 
 //    @NonNull

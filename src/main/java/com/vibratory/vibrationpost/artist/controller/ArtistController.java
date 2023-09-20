@@ -37,4 +37,9 @@ public class ArtistController {
         return new ResponseEntity<>(artist,HttpStatus.ACCEPTED);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Artist> deleteArtist(@PathVariable Long id)throws ArtistException{
+        artistService.deleteArtist(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

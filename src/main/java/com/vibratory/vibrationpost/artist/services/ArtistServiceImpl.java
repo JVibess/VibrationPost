@@ -6,6 +6,7 @@ import com.vibratory.vibrationpost.artist.repo.ArtistRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -40,11 +41,27 @@ public class ArtistServiceImpl implements ArtistService{
             throw new ArtistException("Artist not found");
         }
         Artist savedArtist = artistOptional.get();
-//        savedArtist.setBio(artist.getBio());
-//        savedArtist.setUserName(artist.getUserName());
-//        savedArtist.setImage(artist.getImage());
-//        savedArtist.setPassword(artist.getPassword());
+        savedArtist.setBio(artist.getBio());
+        savedArtist.setUserName(artist.getUserName());
+        savedArtist.setImage(artist.getImage());
+        savedArtist.setPassword(artist.getPassword());
         return artistRepo.save(savedArtist);
+    }
+
+    @Override
+    public List<Artist> getAllArtist() {
+        return artistRepo.findAll();
+    }
+
+    @Override
+    public Boolean deleteArtist(Long id) throws ArtistException {
+        Optional<Artist> artistOptional = artistRepo.findById(id);
+        if(artistOptional.isEmpty()){
+            throw new ArtistException("Artist does not exist, can not delete");
+        }
+        Artist artistToDelte = artistOptional.get();
+        artistRepo.delete(artistToDelte);
+        return true;
     }
 
 

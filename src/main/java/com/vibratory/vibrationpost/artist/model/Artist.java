@@ -11,8 +11,11 @@ import java.util.List;
 
 @Entity
 @Data
-public class Artist {
+public class Artist extends Account{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long artistId;
+
+    @ManyToMany
+    private List<Fan> fans;
 }
