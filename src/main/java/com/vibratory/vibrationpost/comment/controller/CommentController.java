@@ -37,4 +37,15 @@ public class CommentController {
         List<Comment> comment = commentService.getAllComments();
         return new ResponseEntity<>(comment,HttpStatus.OK);
     }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Comment> updateById(@PathVariable Long id, @RequestBody Comment comment)throws CommentException{
+        Comment updatedComment = commentService.updateComments(id,comment);
+        return new ResponseEntity<>(comment,HttpStatus.ACCEPTED);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Comment> deleteComment(@PathVariable Long id)throws CommentException{
+        commentService.deleteComments(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

@@ -1,5 +1,7 @@
 package com.vibratory.vibrationpost.fan.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.vibratory.vibrationpost.artist.model.Artist;
 import com.vibratory.vibrationpost.common.Account;
 import com.vibratory.vibrationpost.post.model.Post;
@@ -19,12 +21,10 @@ public class Fan extends Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long fanId;
 
-    @ManyToMany
     @NonNull
     private List<Fan> followingUser;
 
     @NonNull
-    @ManyToMany
     private List<Artist> followingArtist;
 
 //    @NonNull

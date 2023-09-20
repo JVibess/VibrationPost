@@ -1,14 +1,12 @@
 package com.vibratory.vibrationpost.comment.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Data
@@ -23,5 +21,17 @@ public class Comment {
     private String text;
 
     @NonNull
-    private LocalDateTime dateCreated;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateCreated;
+
+    @NonNull
+    @Column(name = "post_id")
+    private Long postId;
+
+
+
+    @PrePersist
+    protected void onCreate() {
+        dateCreated = new Date(); // Set the creation date to the current date and time
+    }
 }

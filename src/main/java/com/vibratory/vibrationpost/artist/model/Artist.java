@@ -1,23 +1,18 @@
 package com.vibratory.vibrationpost.artist.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.vibratory.vibrationpost.common.Account;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.vibratory.vibrationpost.fan.model.Fan;
+import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
-@RequiredArgsConstructor
-@EqualsAndHashCode
 @Data
-@ToString
-@Getter
-@Setter
-public class Artist extends Account {
+public class Artist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long artistId;
-
-
 }

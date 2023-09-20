@@ -11,6 +11,7 @@ import java.util.Optional;
 @Service
 public class ArtistServiceImpl implements ArtistService{
 
+
     private ArtistRepo artistRepo;
 
     @Autowired
@@ -39,10 +40,10 @@ public class ArtistServiceImpl implements ArtistService{
             throw new ArtistException("Artist not found");
         }
         Artist savedArtist = artistOptional.get();
-        savedArtist.setBio(artist.getBio());
-        savedArtist.setUserName(artist.getUserName());
-        savedArtist.setImage(artist.getImage());
-        savedArtist.setPassword(artist.getPassword());
+//        savedArtist.setBio(artist.getBio());
+//        savedArtist.setUserName(artist.getUserName());
+//        savedArtist.setImage(artist.getImage());
+//        savedArtist.setPassword(artist.getPassword());
         return artistRepo.save(savedArtist);
     }
 
