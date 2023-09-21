@@ -31,7 +31,7 @@ public class ArtistController {
         Artist artist = artistService.getById(id);
         return new ResponseEntity<>(artist,HttpStatus.OK);
     }
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<Artist> updateById(@PathVariable Long id, @RequestBody Artist artist) throws ArtistException {
         artist = artistService.updateArtist(id,artist);
         return new ResponseEntity<>(artist,HttpStatus.ACCEPTED);

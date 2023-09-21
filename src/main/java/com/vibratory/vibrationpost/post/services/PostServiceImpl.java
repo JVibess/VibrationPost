@@ -39,6 +39,10 @@ public class PostServiceImpl implements PostService{
         }
         Post updatedPost = postOptional.get();
         updatedPost.setText(post.getText());
+        updatedPost.setCommentList(post.getCommentList());
+        updatedPost.setFan_id(post.getFan_id());
+        updatedPost.setMediaFile(post.getMediaFile());
+        updatedPost.setArtist_id(post.getArtist_id());
         return postRepo.save(updatedPost);
     }
 

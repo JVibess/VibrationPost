@@ -43,7 +43,8 @@ public class AlbumServiceImpl implements AlbumService{
         Album album1 = getById(id);
         album1.setName(album.getName());
         album1.setTracks(album.getTracks());
-
+        album1.setArtistId(album.getArtistId());
+        album1.setTracks(album.getTracks());
         return album1;
 
     }

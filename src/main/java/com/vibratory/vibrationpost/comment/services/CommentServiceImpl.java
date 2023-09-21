@@ -39,6 +39,9 @@ public class CommentServiceImpl implements CommentService{
         }
         Comment updatedComment = commentOptional.get();
         updatedComment.setText(comment.getText());
+        updatedComment.setArtistId(comment.getCommentId());
+        updatedComment.setFanId(comment.getFanId());
+        updatedComment.setDateCreated(comment.getDateCreated());
         return commentRepo.save(updatedComment);
     }
 

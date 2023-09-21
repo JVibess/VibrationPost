@@ -45,6 +45,9 @@ public class ArtistServiceImpl implements ArtistService{
         savedArtist.setUserName(artist.getUserName());
         savedArtist.setImage(artist.getImage());
         savedArtist.setPassword(artist.getPassword());
+        savedArtist.setAlbums(artist.getAlbums());
+        savedArtist.setFans(artist.getFans());
+        savedArtist.setPosts(artist.getPosts());
         return artistRepo.save(savedArtist);
     }
 

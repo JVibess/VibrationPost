@@ -126,7 +126,7 @@ public class ArtistControllerTest {
     public void deleteByIdSuccess()throws Exception{
         BDDMockito.doReturn(true).when(mockArtistService).deleteArtist(any());
 
-        mockMvc.perform(delete("/artist /{id}",id))
+        mockMvc.perform(delete("/artist/{id}",id))
                 .andExpect(MockMvcResultMatchers.status().isNoContent());
     }
 

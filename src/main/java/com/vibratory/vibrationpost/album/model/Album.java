@@ -22,4 +22,8 @@ public class Album {
     @OneToMany
     @JoinColumn(name = "album_id")
     private List<Songs> tracks;
+
+    @NonNull
+    @Column(name = "artist_album")
+    private Long artistId;
 }

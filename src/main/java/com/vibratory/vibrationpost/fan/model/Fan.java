@@ -3,6 +3,7 @@ package com.vibratory.vibrationpost.fan.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.vibratory.vibrationpost.artist.model.Artist;
+import com.vibratory.vibrationpost.comment.model.Comment;
 import com.vibratory.vibrationpost.common.Account;
 import com.vibratory.vibrationpost.post.model.Post;
 import jakarta.persistence.*;
@@ -10,7 +11,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
-import javax.xml.stream.events.Comment;
 import java.util.List;
 @Entity
 @Data
@@ -29,13 +29,15 @@ public class Fan extends Account {
     @ManyToMany
     private List<Artist> followingArtist;
 
-//    @NonNull
-//    @OneToMany(mappedBy = "author")
-//    private List<Comment> comments;
-//
-//    @NonNull
-//    @OneToMany(mappedBy = "author")
-//    private List<Post> posts;
+    @NonNull
+    @OneToMany
+    @JoinColumn(name = "fan_comment")
+    private List<Comment> comments;
+
+    @NonNull
+    @OneToMany
+    @JoinColumn(name = "fan_post")
+    private List<Post> posts;
 
 
 

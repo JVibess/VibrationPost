@@ -42,6 +42,8 @@ public class FanServiceImpl implements FanService{
        updatedFan.setBio(fan.getBio());
        updatedFan.setImage(fan.getImage());
        updatedFan.setFollowingArtist(fan.getFollowingArtist());
+       updatedFan.setComments(fan.getComments());
+       updatedFan.setPosts(fan.getPosts());
        return fanRepository.save(updatedFan);
     }
 

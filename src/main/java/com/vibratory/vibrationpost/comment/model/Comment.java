@@ -28,6 +28,14 @@ public class Comment {
     @Column(name = "post_id")
     private Long postId;
 
+    @NonNull
+    @Column(name = "fan_comment")
+    private Long fanId;
+
+    @NonNull
+    @Column(name = "artist_comment")
+    private Long artistId;
+
 
 
     @PrePersist
