@@ -48,6 +48,9 @@ public class ArtistServiceImpl implements ArtistService{
         savedArtist.setAlbums(artist.getAlbums());
         savedArtist.setFans(artist.getFans());
         savedArtist.setPosts(artist.getPosts());
+        savedArtist.setArtistId(artist.getArtistId());
+        savedArtist.setComments(artist.getComments());
+        savedArtist.setArtist_followed(artist.getArtist_followed());
         return artistRepo.save(savedArtist);
     }
 

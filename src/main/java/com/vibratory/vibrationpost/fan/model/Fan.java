@@ -21,13 +21,16 @@ public class Fan extends Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long fanId;
 
-    @NonNull
-    @ManyToMany
-    private List<Fan> followingUser;
+//    @NonNull
+//    @ManyToMany
+//    @JoinColumn
+//    private List<Fan> followingUser;
 
     @NonNull
     @ManyToMany
-    private List<Artist> followingArtist;
+    @JoinTable(name = "artist_fans",joinColumns = @JoinColumn(name ="name_id" ),
+    inverseJoinColumns = @JoinColumn(name = "artist_id"))
+    private List<Artist> followingArtists;
 
     @NonNull
     @OneToMany
@@ -38,6 +41,7 @@ public class Fan extends Account {
     @OneToMany
     @JoinColumn(name = "fan_post")
     private List<Post> posts;
+
 
 
 

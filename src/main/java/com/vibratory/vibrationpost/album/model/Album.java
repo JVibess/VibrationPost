@@ -19,6 +19,7 @@ public class Album {
     @NonNull
     private String Name;
 
+    @NonNull
     @OneToMany
     @JoinColumn(name = "album_id")
     private List<Songs> tracks;

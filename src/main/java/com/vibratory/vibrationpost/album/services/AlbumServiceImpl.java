@@ -46,7 +46,6 @@ public class AlbumServiceImpl implements AlbumService{
         album1.setArtistId(album.getArtistId());
         album1.setTracks(album.getTracks());
         return album1;
-
     }
 
     @Override

@@ -38,10 +38,10 @@ public class FanServiceImpl implements FanService{
            throw new FanException("Fan not found");
        }
        Fan updatedFan = fanOptional.get();
-       updatedFan.setFollowingUser(fan.getFollowingUser());
+//       updatedFan.setFollowingUser(fan.getFollowingUser());
        updatedFan.setBio(fan.getBio());
        updatedFan.setImage(fan.getImage());
-       updatedFan.setFollowingArtist(fan.getFollowingArtist());
+       updatedFan.setFollowingArtists(fan.getFollowingArtists());
        updatedFan.setComments(fan.getComments());
        updatedFan.setPosts(fan.getPosts());
        return fanRepository.save(updatedFan);

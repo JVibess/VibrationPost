@@ -42,7 +42,7 @@ public class FanController {
     @PutMapping("/update/{id}")
     public ResponseEntity<Fan> updateById(@PathVariable Long id,@RequestBody Fan fan) throws FanException {
         Fan updatedFan = fanService.updateFan(id,fan);
-        return new ResponseEntity<>(fan,HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(updatedFan,HttpStatus.ACCEPTED);
     }
 
     @DeleteMapping("/{id}")

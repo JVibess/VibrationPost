@@ -38,6 +38,7 @@ public class Comment {
 
 
 
+
     @PrePersist
     protected void onCreate() {
         dateCreated = new Date(); // Set the creation date to the current date and time

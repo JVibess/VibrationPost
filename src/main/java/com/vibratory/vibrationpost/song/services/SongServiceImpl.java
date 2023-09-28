@@ -45,7 +45,6 @@ public class SongServiceImpl implements SongService{
         updatedSongs.setAlbumId(songs.getAlbumId());
         updatedSongs.setName(songs.getName());
         updatedSongs.setAudioUrl(songs.getAudioUrl());
-
         return songRepo.save(updatedSongs);
     }
 
